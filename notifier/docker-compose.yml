@@ -1,0 +1,19 @@
+version: '3.0'
+services:
+  notifier:
+    build: 
+      context: .
+      dockerfile: ./src/main/docker/Dockerfile
+    image: demo/notifier:0.0.1-SNAPSHOT
+    environment:
+    - TOMCAT_MAX_CONNECTIONS=200
+    - TOMCAT_MAX_THREADS=400
+    - TOMCAT_BACKLOG=1
+    - APP_OPTS=
+    ports:
+    - 11103:8080
+    - 11104:6000
+    networks:
+    - bridge
+networks:
+  bridge: null

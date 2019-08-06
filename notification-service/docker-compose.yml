@@ -4,7 +4,7 @@ services:
     build: 
       context: .
       dockerfile: ./src/main/docker/Dockerfile
-    image: demo/notification-service-0.0.1-SNAPSHOT.jar
+    image: demo/notification-service:0.0.1-SNAPSHOT
     environment:
     - TOMCAT_MAX_CONNECTIONS=200
     - TOMCAT_MAX_THREADS=400

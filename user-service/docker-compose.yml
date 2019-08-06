@@ -1,6 +1,6 @@
 version: '3.0'
 services:
-  solution:
+  user-service:
     build: 
       context: .
       dockerfile: ./src/main/docker/Dockerfile

@@ -13,7 +13,7 @@ ENV JAVA_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=600
 # kafak server for log collection
 # ENV KAFKA_SERVER="10.220.202.120:9092"
 
-ADD ./target/notifier-0.0.1-SNAPSHOT.jar app.jar
+ADD ./target/notification-service-0.0.1-SNAPSHOT.jar app.jar
 
 # You can use a RUN command to "touch" the jar file so that it has a file modification time 
 # (Docker creates all container files in an "unmodified" state by default). 

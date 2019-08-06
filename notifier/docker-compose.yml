@@ -13,7 +13,7 @@ services:
     ports:
     - 11103:8080
     - 11104:6000
-    networks:
-    - bridge
-networks:
-  bridge: null
+#    networks:
+#    - bridge
+#networks:
+#  bridge: null

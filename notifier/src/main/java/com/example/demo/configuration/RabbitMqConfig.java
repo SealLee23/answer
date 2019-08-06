@@ -16,30 +16,30 @@ import java.util.Map;
 @Configuration
 public class RabbitMqConfig {
 
-    @Bean
-    public MessageConverter messageConverter()
-    {
-        Jackson2JsonMessageConverter jsonMessageConverter = new Jackson2JsonMessageConverter();
-        jsonMessageConverter.setClassMapper(classMapper());
-        return jsonMessageConverter;
-    }
-
-
-    @Bean
-    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory)
-    {
-        RabbitTemplate template = new RabbitTemplate(connectionFactory);
-        template.setMessageConverter(messageConverter());
-        return template;
-    }
-
-    @Bean
-    public DefaultClassMapper classMapper()
-    {
-        DefaultClassMapper classMapper = new DefaultClassMapper();
-        Map<String, Class<?>> idClassMapping = new HashMap<>();
-        idClassMapping.put("com.example.demo.entity.UserEntity", UserEntity.class);
-        classMapper.setIdClassMapping(idClassMapping);
-        return classMapper;
-    }
+//    @Bean
+//    public MessageConverter messageConverter()
+//    {
+//        Jackson2JsonMessageConverter jsonMessageConverter = new Jackson2JsonMessageConverter();
+//        jsonMessageConverter.setClassMapper(classMapper());
+//        return jsonMessageConverter;
+//    }
+//
+//
+//    @Bean
+//    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory)
+//    {
+//        RabbitTemplate template = new RabbitTemplate(connectionFactory);
+//        template.setMessageConverter(messageConverter());
+//        return template;
+//    }
+//
+//    @Bean
+//    public DefaultClassMapper classMapper()
+//    {
+//        DefaultClassMapper classMapper = new DefaultClassMapper();
+//        Map<String, Class<?>> idClassMapping = new HashMap<>();
+//        idClassMapping.put("com.example.demo.entity.UserEntity", UserEntity.class);
+//        classMapper.setIdClassMapping(idClassMapping);
+//        return classMapper;
+//    }
 }

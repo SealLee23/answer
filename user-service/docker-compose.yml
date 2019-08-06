@@ -1,0 +1,37 @@
+version: '3.0'
+services:
+  solution:
+    build: 
+      context: .
+      dockerfile: ./src/main/docker/Dockerfile
+    image: demo/solution:0.0.1-SNAPSHOT
+    environment:
+    - TOMCAT_MAX_CONNECTIONS=200
+    - TOMCAT_MAX_THREADS=400
+    - TOMCAT_BACKLOG=1
+    - APP_OPTS=
+    ports:
+    - 11111:8080
+    - 11111:6000
+    networks:
+#    - bridge
+    - dev-docker
+#    deploy:
+#      replicas: 1
+#      update_config:
+#        parallelism: 2
+#        delay: 10s
+#      restart_policy:
+#        condition: on-failure
+# AMQP Configuration
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: admin
+#    password: secret
+#    template:
+#      retry:
+#        enabled: true
+#        initial-interval: 2s
+networks:
+  dev-docker: null
